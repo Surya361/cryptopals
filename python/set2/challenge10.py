@@ -24,7 +24,10 @@ def xor(x,y):
 
 def pkcs_7_padding(message, key_len):
     ar = split(message, key_len)
-    ar[-1] += chr(key_len - len(ar[-1])) * (key_len- len(ar[-1]))
+    if type(ar[-1]) is str:
+        ar[-1] = ar[-1].encode() + bytes([key_len - len(ar[-1])]) * (key_len- len(ar[-1]))
+    else:
+        ar[-1] += bytes([key_len - len(ar[-1])]) * (key_len - len(ar[-1]))
     return ar
 
 def encrypt_cbc(message, IV, key):
