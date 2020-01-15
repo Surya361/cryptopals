@@ -16,4 +16,4 @@ def pkcs_7_stripper(message, key_len):
             return message[:pad_number]
         else:
             raise Exception("Padding error")
-print(pkcs_7_stripper(b'ICE ICE BABY\x01\x02\x03\x04',16))
+print(pkcs_7_stripper(b'                ICE ICE BABY\x04\x04\x04\x04',16))

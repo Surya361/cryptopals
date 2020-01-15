@@ -36,6 +36,7 @@ def get_block_size():
 
 def format_string(message):
     unknown_string = "Um9sbGluJyBpbiBteSA1LjAKV2l0aCBteSByYWctdG9wIGRvd24gc28gbXkgaGFpciBjYW4gYmxvdwpUaGUgZ2lybGllcyBvbiBzdGFuZGJ5IHdhdmluZyBqdXN0IHRvIHNheSBoaQpEaWQgeW91IHN0b3A/IE5vLCBJIGp1c3QgZHJvdmUgYnkK"
+    print(type(message))
     return RANDOM_PREFIX + message.encode() + base64.b64decode(unknown_string)
 
 def break_encryption(key_size):
